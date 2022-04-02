@@ -58,13 +58,6 @@ pageextension 50101 "50101PageExtension.TaskCard.al" extends "Create Task"
             }
         }
 
-
-
-
-
-
-
-
         addafter(General)
         {
             group("Projekt")
@@ -72,7 +65,6 @@ pageextension 50101 "50101PageExtension.TaskCard.al" extends "Create Task"
                 field(JobNo; Rec.JobNo)
                 {
                     ApplicationArea = All;
-
                     trigger OnValidate()
                     begin
                         Rec.CalcFields(Rec."JobDescription1")

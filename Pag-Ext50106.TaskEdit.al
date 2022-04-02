@@ -78,7 +78,7 @@ pageextension 50106 TaskEdit extends "Task Card"
 
         }
 
-        addafter("Recurring Date Interval")
+        addafter("Calc. Due Date From")
         {
             group("TaskInfo")
             {

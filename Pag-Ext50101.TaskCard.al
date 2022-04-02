@@ -9,6 +9,7 @@ pageextension 50101 "50101PageExtension.TaskCard.al" extends "Create Task"
             group("Hide")
             {
 
+                Visible = false;
                 field(Status; Rec.Status)
                 {
                     Visible = False;
@@ -38,8 +39,24 @@ pageextension 50101 "50101PageExtension.TaskCard.al" extends "Create Task"
                 ApplicationArea = all;
             }
 
-        }
 
+        }
+        addafter(Description)
+        {
+            field(ProgressCode; Rec.ProgressCode)
+            {
+                ApplicationArea = all;
+                trigger OnValidate()
+                begin
+                    rec.CalcFields(Rec.ProgressDescription)
+                end;
+            }
+            field(ProgressDescription; Rec.ProgressDescription)
+            {
+                ApplicationArea = all;
+
+            }
+        }
 
 
 

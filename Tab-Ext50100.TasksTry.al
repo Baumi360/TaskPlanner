@@ -68,6 +68,21 @@ tableextension 50100 TasksTry extends "To-do"
 
 
         }
+        field(501012; ProgressCode; Code[50])
+        {
+            Caption = 'ProgressCode';
+            TableRelation = Progress.Code;
+            DataClassification = AccountData;
+        }
+        field(501013; ProgressDescription; Text[50])
+        {
+            Caption = 'ProgressDescription';
+            FieldClass = FlowField;
+            TableRelation = Progress;
+            CalcFormula = lookup(Progress.Description where(Code = field(ProgressCode)));
+            Editable = false;
+
+        }
 
     }
 }
